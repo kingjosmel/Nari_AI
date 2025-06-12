@@ -185,6 +185,7 @@ export const getBookmarkedCompanions = async (userId: string) => {
     .select(`companions:companion_id (*)`) // Notice the (*) to get all the companion data
     .eq("user_id", userId);
   if (error) {
+    console.log("Supabase error in getBookmarkedCompanions:", error);
     throw new Error(error.message);
   }
   // We don't need the bookmarks data, so we return only the companions
