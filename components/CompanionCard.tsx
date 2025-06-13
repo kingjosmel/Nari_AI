@@ -26,6 +26,7 @@ const CompanionCard = ({
 }: CompanionCardProps) => {
   const pathname = usePathname();
   const handleBookmark = async () => {
+    console.log(bookmarked);
     if (bookmarked) {
       await removeBookmark(id, pathname);
     } else {
